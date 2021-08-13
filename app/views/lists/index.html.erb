@@ -1,9 +1,25 @@
-<h1>All lists</h1>
+  <div class="banner">
+  <div class="container">
+    <h1>My Movie Watchlist</h1>
+    <p>Keep track of your favorite movies</p>
+  </div>
+</div>
 
 <ul>
   <%  @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
+    <div class="list-card">
+      <li>
+        <% if list.photo %>
+            <%= cl_image_tag list.photo.key , height: 300, width: 400, crop: :fill %>
+        <% else %>
+            <h4>"No pictures"</h4>
+        <% end %>
+        <%= link_to list.name, list_path(list) %>
+      </li>
+    </div>
   <% end %>
 </ul>
+
+
 
 <%= link_to 'Add a new list', new_list_path, class: "btn btn-primary"%>
