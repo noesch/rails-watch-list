@@ -13,7 +13,11 @@
 }
 
 .list-card {
+  margin: 20px;
   display: flex;
   height: 200px;
   width: 600px;
+  border: solid 2px #564256;
+  background-size: cover;
+  background-position: center;
 }
